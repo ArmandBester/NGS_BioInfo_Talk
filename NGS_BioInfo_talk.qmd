@@ -1,48 +1,8 @@
 ---
-title: "Adventures in bio-informatics"
+title: "Next and 3rd generation sequencing adventures"
 author: "Armand Bester"
 format: revealjs
 ---
-
-# Pickup lines
-
-::: {#fig-pickuplines layout-ncol=2}
-
-![](media/PhyloPi_1.png)
-
-![](media/PhyloPi_2.png)
-
-Award for best pick up line
-:::
-
-##
-
-::: {#fig-phylopi_overview layout-ncol=2}
-
-![](media/pone.0213241.g002.png)
-
-![](media/pone.0213241.g003.png){width=80%}
-
-Pipeline overview and benchmarking
-:::
-
-##
-
-::: {#fig-phylopi_dists layout-ncol=1}
-
-![](media/pone.0213241.g004.png){width=80%}
-
- Genetic distance analysis of type inter and intra.
-:::
-
-##
-
-::: {#fig-phylopi_rviews layout-ncol=1}
-
-![](media/Rviews.png){width=100%}
-
- [https://rviews.rstudio.com/2019/04/30/analysing-hiv-pandemic-part-1/](https://rviews.rstudio.com/2019/04/30/analysing-hiv-pandemic-part-1/)
-:::
 
 # Another pandemic happens
 
@@ -178,7 +138,7 @@ import plotly.express as px
 
 names = "qaccver saccver pident bitscore evalue length mismatch gapopen qstart qend sstart send ssciname stitle staxid scomname sblastname sskingdom staxids".split(" ")
 
-blstDbAll = pd.read_csv("ampSorter_blst_nt.csv", delimiter="\t", names=names)
+blstDbAll = pd.read_csv("data/ampSorter_blst_nt.csv", delimiter="\t", names=names)
 maxBitScr = blstDbAll.sort_values('bitscore', ascending=False).groupby('qaccver', as_index=False).first()
 maxBitScr['BC'] = maxBitScr['qaccver'].apply(lambda s: s.split("_")[1])
 maxBitScr['N'] = maxBitScr['qaccver'].apply(lambda s: int(s.split("(")[1].replace(")", "")))
