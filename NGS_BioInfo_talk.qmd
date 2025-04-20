@@ -1,10 +1,42 @@
 ---
 title: "Next and 3rd generation sequencing adventures"
 author: "Armand Bester"
-format: revealjs
+format: 
+    revealjs:
+        theme: default
 ---
 
-# Another pandemic happens
+
+# Infant microbiome
+
+::: {#fig-alpha layout-ncol=2}
+![](media/infant_alpha.png)
+
+![](media/milton.png)
+
+Alpha diversities over time
+:::
+
+$$
+H = - \sum_{i=1}^k p_i log_2(p_i)
+$${#eq-Shannon}
+
+## ...Example results
+
+* [Python notebook](html/Kraken_and_bracken.html)
+
+
+* Krona reports
+    
+    [Krona 5b](html/krona/VRM-5B.krona.html)
+
+    [Krona 5d](html/krona/VRM-5D.krona.html)
+
+* [Pavian analysis](html/Uploaded_sample_set-report.html)
+
+
+
+# A pandemic happens
 
 ::: {#fig-pandemic layout-ncol=1}
 
@@ -191,10 +223,10 @@ plt.title("Reads per barcode");
 
 ```{python}
 #| label: fig-interactive-id
-#| fig-cap: "Blast results"
+#| fig-cap: "Amplicon bins"
 
 px.scatter(data_frame=maxBitScr, x='BC', y='ssciname', 
-           color='sskingdom', size='Frac', height=600, 
+           color='sskingdom', size='Frac', height=400, 
           hover_data = ['N'])
 ```
 
@@ -219,50 +251,6 @@ Fungi rendering Dall-E 2
 :::
 
 [Example notebook](html/Blast_raw_reads_against_nt.html)
-
-
-# Infant microbiome
-
-::: {#fig-alpha layout-ncol=2}
-![](media/infant_alpha.png)
-
-![](media/milton.png)
-
-Alpha diversities over time
-:::
-
-$$
-H = - \sum_{i=1}^k p_i log_2(p_i)
-$${#eq-Shannon}
-
-## ...Example results
-
-* [Python notebook](html/Kraken_and_bracken.html)
-
-
-* Krona reports
-    
-    [Krona 5b](html/krona/VRM-5B.krona.html)
-
-    [Krona 5d](html/krona/VRM-5D.krona.html)
-
-* [Pavian analysis](html/Uploaded_sample_set-report.html)
-
-# Distances in 3D space
-
-::: {#fig-P450 layout-ncol=1}
-
-![](media/2j4s_assembly-1.jpeg)
-
-P450 BM3 heme domain in complex with DMSO
-
-:::
-
-## Example report
-
-* [Calculate distances](html/Distances.html)
-
-* [Structure at RCSB](https://www.rcsb.org/structure/2J4S)
 
 
 # Conclusion
